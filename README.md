@@ -1,3 +1,13 @@
+# 软工作业 Contributor
+
+kiaia 李牧锴
+vispery 刘炜
+jokmingwong 黄钰铭
+inskil 彭婧
+linan1109 李楠
+Zx55 陈泽人
+~~KurisuSaber THYNB~~
+
 # WechatAppOfCanteen
 
 ***
