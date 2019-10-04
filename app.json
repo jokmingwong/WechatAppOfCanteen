@@ -46,6 +46,5 @@
       }
     ]
   },
-  "enablePullDownRefresh": true,
   "sitemapLocation": "sitemap.json"
 }
