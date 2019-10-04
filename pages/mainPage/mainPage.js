@@ -33,9 +33,9 @@ Page({
 
   tapDetail: function (e) {
     console.log(e);
-    e.currenTarget.id=
+    const id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../details/details?title=1',
+      url: '../details/details?title=' + id,
     })
   },
 
@@ -139,7 +139,6 @@ Page({
   },
 
   navigateToOrder:function(e){
-   
     wx.switchTab({
       url: "../order/order",
     })
