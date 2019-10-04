@@ -93,9 +93,24 @@ Page({
     var img = e.currentTarget.dataset.img;
     var orderName = e.currentTarget.dataset.ordername;
     var orderTime = e.currentTarget.dataset.ordertime;
-    var url = '../comment/comment?recipeId=' + recipeId + "&img=" + img + "&orderName=" + orderName + "&orderTime=" + orderTime;
+    var orderid = e.currentTarget.dataset.orderid;
+    var url = '../comment/comment?recipeId=' + recipeId + "&img=" + img + "&orderName=" + orderName + "&orderTime=" + orderTime + "&orderid=" + orderid;
     wx.navigateTo({
       url: url,
     })
+  },
+
+  onPullDownRefresh: function () {
+    console.log("refresh");
+    wx.showNavigationBarLoading();
+    var that = this;
+    app.getOrder();
+
+    setTimeout(() => {
+      that.onShow();
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
+    }, 500);
   }
+
 })

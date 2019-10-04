@@ -37,6 +37,12 @@
     意见反馈
     </view>
   </button>
+  <button type="default" size="default" class="items2" bindtap='jumpToCanteen'>
+    <image class='card' src='/images/food.png'></image>
+    <view class="schoolCard">
+    食堂端入口
+    </view>
+  </button>
   <button type="default" size="default" class="items2" bindtap='jumpToAboutUs'>
   <image class='card' src='/images/aboutus.png'></image>
     <view class="schoolCard">

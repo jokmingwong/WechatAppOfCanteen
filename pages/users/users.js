@@ -56,6 +56,11 @@ Page({
       url: '../users/aboutUs/aboutUs',
     })
   },
+  jumpToCanteen: function (e) {
+    wx.navigateTo({
+      url: '../canteen/canteen',
+    })
+  },
   jumpToMyFavorites: function (e) {
     wx.navigateTo({
       url: '../users/myFavorites/myFavorites',

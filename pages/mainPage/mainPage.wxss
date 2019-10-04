@@ -211,3 +211,11 @@ page {
 	font-size: 36rpx;
 
 }
+.cart-detail .timeset{
+  	
+	display: -webkit-flex;
+	color: #333;
+	font-size: 36rpx;
+	line-height: 50rpx;
+	padding: 20rpx 40rpx;
+}

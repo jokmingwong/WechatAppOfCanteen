@@ -5,20 +5,22 @@ Page({
     recipeId: 0,
     img: "",
     orderTime: "",
-    orderName: ""
+    orderName: "",
+    orderid: 0,
   },
 
-  onLoad: function(options) {
+  onLoad: function (options) {
     var img = "../.." + options.img;
     this.setData({
       recipeId: options.recipeId,
       img: img,
       orderTime: options.orderTime,
-      orderName: options.orderName
+      orderName: options.orderName,
+      orderid: options.orderid,
     });
   },
 
-  formSubmit: function(e) {
+  formSubmit: function (e) {
     var comment = e.detail.value.opinion;
 
     if (comment.length == 0) {
@@ -30,7 +32,7 @@ Page({
     } else if (comment.length > 100) {
       wx.showToast({
         title: '评论太长',
-        icon: 'none', 
+        icon: 'none',
         duration: 1000
       })
     } else {
@@ -42,13 +44,14 @@ Page({
       var that = this;
 
       wx.request({
-        url: 'http://canteen.beihangsoft.cn/sendComment',
+        url: 'http://62.234.183.121/sendComment',
         data: {
           'comment_include': comment,
           'comment_user_head': userHead,
           'comment_user_id': app.globalData.openid,
           'comment_user_name': nickName,
-          'recipe_id': that.data.recipeId
+          'recipe_id': that.data.recipeId,
+          'order_id': that.data.orderid,
         },
         method: 'POST',
         success: (res) => {

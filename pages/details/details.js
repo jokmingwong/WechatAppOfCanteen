@@ -3,7 +3,7 @@ const app = getApp();
 
 Page({
   data: {
-    id: 0,
+    id: '',
     details: null,
     comments: [],
     recommend: [],
@@ -37,11 +37,13 @@ Page({
 
   getComments: function() {
     var that = this;
+    console.log(that.data.id);
     wx.request({
-      url: 'http://canteen.beihangsoft.cn/getComment',
+      url: 'http://62.234.183.121/getComment',
       data: {
         'recipe_id': that.data.id,
       },
+   
       method: "POST",
       success: (res) => {
         console.log("success");

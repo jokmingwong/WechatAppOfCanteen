@@ -8,7 +8,7 @@
   <view class="bottom_line" style="margin-left:{{maginleft}};"></view>
 
   <view class="section">
-    <scroll-view class="scroll" scroll-with-animation="false" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="100" scroll-top="{{scrollTop}}">
+    <view class="scroll" scroll-with-animation="false" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-left="100" scroll-top="{{scrollTop}}">
 
       <view id="list" wx:for="{{orderlist}}" wx:key="id">
         <view class="viewstate">
@@ -23,14 +23,24 @@
               <text class="textstate" style='font-size:80%;margin-bottom:20rpx;color:#040008'>{{item.recipename}}</text>
               <text class="textstate" style='font-size: 70%;color:#cccccc'>订单时间：{{item.orderdate}}</text>
               <text class="textstate" style='font-size: 70%;color:#cccccc;margin-bottom:10rpx;'>下单时间：{{item.orderdate}}</text>
-               <text class="price">金额：16元</text>
-               <block wx:if="{{status == 2}}">
-                <view class="commitButton" bindtap="jumpToCommit" data-recipeId="{{item.recipeid}}" data-img="{{foodList[item.recipeid].pic}}" data-orderName="{{item.recipename}}" data-orderTime="{{item.orderdate}}">评价晒单</view>
-               </block>
+              <text class="price">份数：{{item.amount}} 单价：{{item.price}}</text>
+              <text class="textstate"  style='font-size: 70%;color:#cccccc;aline' wx:if="{{item.state == 1 && item.type == '1'}}">就餐时间：11:20 就餐方式：堂食</text>
+              <text class="textstate"  style='font-size: 70%;color:#cccccc' wx:if="{{item.state == 1 && item.type == '2'}}">就餐时间：11:20 就餐方式：外卖</text>
+              <text class="textstate"  style='font-size: 70%;color:#cccccc' wx:if="{{item.state == 2 && item.type == '1'}}">就餐时间：12:00 就餐方式：堂食</text>
+              <text class="textstate"  style='font-size: 70%;color:#cccccc' wx:if="{{item.state == 2 && item.type == '2'}}">就餐时间：12:00 就餐方式：外卖</text>   
+              <text class="textstate"  style='font-size: 70%;color:#cccccc' wx:if="{{item.state == 3 && item.type == '1'}}">就餐时间：17:20 就餐方式：堂食</text>
+              <text class="textstate"  style='font-size: 70%;color:#cccccc' wx:if="{{item.state == 3 && item.type == '2'}}">就餐时间：17:20 就餐方式：外卖</text>
+              <text class="textstate"  style='font-size: 70%;color:#cccccc' wx:if="{{item.state == 4 && item.type == '1'}}">就餐时间：12:00 就餐方式：堂食</text>
+              <text class="textstate" style='font-size: 70%;color:#cccccc'  wx:if="{{item.state == 4 && item.type == '2'}}">就餐时间：12:00 就餐方式：外卖</text>               
+
+              <block wx:if="{{status == 2}}">
+                <view class="commitButton" bindtap="jumpToCommit" data-recipeId="{{item.recipeid}}" data-img="{{foodList[item.recipeid].pic}}" data-orderName="{{item.recipename}}" data-orderTime="{{item.orderdate}}" data-orderid="{{item.orderid}}">评价晒单</view>
+              </block>
             </view>
           </view> 
         </view>
+        <view class='bottomline'> </view>
       </view>
-    </scroll-view>
+    </view>
   </view>
 </view>

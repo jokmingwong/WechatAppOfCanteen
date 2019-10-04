@@ -64,5 +64,9 @@
         "price": 5
     }
   },
-  "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-radio": "/dist/radio/index",
+    "van-radio-group": "/dist/radio-group/index"
+  }
 }

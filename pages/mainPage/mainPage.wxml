@@ -1,6 +1,8 @@
 
 <view class = "all">
+ 
   <view class="content-container">
+ 
 
 <!-- 左边分类 -->
 		<scroll-view class="classify-container" scroll-y="true">
@@ -28,7 +30,21 @@
   
     <view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
 		<view class="mask" bindtap="hideCartDetail"></view>
+    
 		<view class="list">
+    <view class = "timeset">
+    
+    <van-radio-group value="{{ timeset }}"bind:change="onChange" >
+      <van-radio name="1" label_position="right">预约时间：11:20 </van-radio>
+      <van-radio name="2" label_position="right">预约时间：12:00 </van-radio>
+      <van-radio name="3" label_position="right">预约时间：17:20 </van-radio>
+      <van-radio name="4" label_position="right">预约时间：18:00 </van-radio>
+    </van-radio-group>
+     <van-radio-group value="{{ timeset2 }}"bind:change="onChange2" >
+      <van-radio name="1" label_position="right">就餐形式：堂食</van-radio>
+      <van-radio name="2" label_position="right">就餐形式：外卖</van-radio>
+    </van-radio-group>
+    </view>
 			<view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
 				<view class="name ellipsis">{{goods[id].name}}</view>
 				<view class="total">￥{{goods[id].price*cart.list[id]}}</view>
@@ -49,11 +65,14 @@
 				<view class="count">{{cart.count}}</view>
 			</view>
 			<view class="total">￥{{cart.total}}</view>
+      
 		</view>
-		<form bindsubmit="submit" report-submit="true">
-			<!--<view formType="submit" class="submit">去结算</view>-->
-			<button class="yellow {{cart.count?'':'disabled'}}" bindtap="navigateToPay" formType="submit" disabled="{{!cart.count}}" type='warn'>去结算</button>
-		</form>
+    
+		
+		
+			<button class="yellow {{cart.count?'':'disabled'}}" formType="submit" bindtap="formSubmit"  disabled="{{!cart.count}}" type="primary">发送订单</button>
+		
 	</view>
+  
 </view>
 
