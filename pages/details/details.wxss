@@ -241,3 +241,19 @@ scroll-view {
   background-color: white;
   float: right;
 }
+
+.textcenter{
+  align-items:center;
+  text-align: center;
+  width: 2.4rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow:auto
+}
+
+.desc{
+  font-size: 0.9rem;
+  color: black;
+  text-overflow: ellipsis;
+  overflow:auto
+}

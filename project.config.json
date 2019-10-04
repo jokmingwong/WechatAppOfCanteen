@@ -7,7 +7,8 @@
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": true,
-		"checkInvalidKey": true
+		"checkInvalidKey": true,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.93",

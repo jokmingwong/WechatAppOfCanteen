@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/hello/hello",
+    
     "pages/mainPage/mainPage",
     "pages/users/users",
     "pages/feedback/feedback",
@@ -8,6 +8,7 @@
     "pages/details/details",
     "pages/pay/pay",
     "pages/data/data",
+    "pages/hello/hello",
     "pages/users/aboutUs/aboutUs",
     "pages/users/healthy/healthy",
     "pages/users/Feedback/Feedback",
