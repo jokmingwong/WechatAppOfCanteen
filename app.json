@@ -26,8 +26,8 @@
     "borderStyle": "white",
     "list": [
       {
-        "selectedIconPath": "images/首页sl.png",
-        "iconPath": "images/首页.png",
+        "selectedIconPath": "images/index_blue.png",
+        "iconPath": "images/index.png",
         "pagePath": "pages/mainPage/mainPage",
         "text": "首页"
       },
@@ -38,8 +38,8 @@
         "text": "订单"
       },
       {
-        "selectedIconPath": "images/我sl.png",
-        "iconPath": "images/我.png",
+        "selectedIconPath": "images/user_blue.png",
+        "iconPath": "images/user.png",
         "pagePath": "pages/users/users",
         "text": "我的"
       }

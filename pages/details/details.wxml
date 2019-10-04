@@ -69,7 +69,7 @@
   <view class='nutitionList'>
     <view class='nutitionTitle'>营养详情</view>
     <view class='nutition'>
-      {{details.nutrition.caloris}}大卡  {{details.nutrition.protein}}克蛋白质  {{details.nutrition.carbohydrate}}克碳水
+      {{details.nutrition.calories}}大卡  {{details.nutrition.protein}}克蛋白质  {{details.nutrition.carbonhydrate}}克碳水
     </view>
   </view>
 

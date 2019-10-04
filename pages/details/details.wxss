@@ -49,7 +49,7 @@ scroll-view {
   font-size: 120%;
   margin-left: 60rpx;
   margin-top: 7rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 14rpx;
 }
 
 .introBottom {
@@ -61,6 +61,7 @@ scroll-view {
   font-size: 80%;
   color: #ccc;
   margin-left: 61rpx;
+  margin-bottom: 16rpx;
 }
 
 .location {
@@ -178,13 +179,18 @@ scroll-view {
 }
 
 .nutitionTitle {
-  font-size: 80%;
+  font-size: 32rpx;
+  color: grey;
   text-align: center;
+  padding-bottom: 8rpx;
+  padding-top: 10rpx;
 }
 
 .nutition {
-  font-size: 80%;
+  font-size: 28rpx;
+  color: grey;
   text-align: center;
+  padding-bottom: 8rpx;
 }
 
 .recommend {
