@@ -7,8 +7,7 @@ Page({
     details: null,
     comments: [],
     recommend: [],
-    enableScrollY: true,
-    showModalStatus: false
+    showPop: false,
   },
 
   onLoad: function (options) {
@@ -23,8 +22,6 @@ Page({
     setTimeout(() => {
       this.getComments();
       setTimeout(() => {
-        console.log("Comments:")
-        console.log(this.data.comments);
         setTimeout(() => {
         }, 300);
       }, 300);
@@ -83,52 +80,16 @@ Page({
     });
   },
 
-  /*抽屉动画 关闭时动画太快*/
-  powerDrawer: function (e) {
-    var currentStatu = e.currentTarget.dataset.statu;
-    this.util(currentStatu)
+  onClosePopup: function (e) {
+    console.log('ccc')
+    this.setData({
+      showPop: false,
+    });
   },
 
-  util: function (currentStatu) {
-    var animation = wx.createAnimation({
-      duration: 600,
-      timingFunction: 'ease',
-      delay: 0
-    });
-
-    this.animation = animation;
-
-    animation.translateY(800).step();
-
+  onShowPopup: function (e) {
     this.setData({
-      animationData: animation.export()
+      showPop: true,
     })
-
-    setTimeout(function () {
-      animation.translateY(0).step()
-      this.setData({
-        animationData: animation
-      })
-
-      if (currentStatu == "close") {
-        //console.log(this.enableScrollY)
-        this.setData(
-          {
-            showModalStatus: false,
-            enableScrollY: true
-          }
-        );
-      }
-    }.bind(this), 100)
-
-    if (currentStatu == "open") {
-      console.log("open")
-      this.setData(
-        {
-          showModalStatus: true,
-          enableScrollY: false
-        }
-      );
-    }
   }
 })  

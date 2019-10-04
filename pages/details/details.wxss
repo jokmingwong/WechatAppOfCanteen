@@ -102,6 +102,24 @@ scroll-view {
   margin-right: 30rpx;
 }
 
+.popup-empty-comment {
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  color: grey;
+  padding-top: 55%;
+}
+
+.empty-comment {
+  height: 120rpx;
+  width: 100%;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: grey;
+  padding-bottom: 30rpx;
+}
+
 .userHead {
   width: 65rpx;
   height: 65rpx;
@@ -109,11 +127,12 @@ scroll-view {
   float: left;
   align-self: middle;
   margin-left: 20rpx;
+  padding-top: 20rpx;
 }
 
 .userName {
   padding-left: 70rpx;
-  padding-top: 8rpx;
+  padding-top: 24rpx;
   padding-bottom: 8rpx;
   font-size: 80%;
   margin-left: 40rpx;
@@ -122,41 +141,14 @@ scroll-view {
 .commentDate {
   font-size: 70%;
   margin-left: 110rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 16rpx;
 }
-
-/*.thumbUp {
-  height: 25rpx;
-  width: 25rpx;
-}*/
 
 .commentContent {
   font-size: 80%;
   margin-left: 110rpx;
   margin-right: 30rpx;
-  margin-bottom: 20rpx;
-}
-
-.drawerScreen {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  background: #000;
-  opacity: 0.2;
-  overflow: hidden;
-}
-
-.drawerBox {
-  width: 100%;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  background: #fff;
+  margin-bottom: 42rpx;
 }
 
 .commentBox {
@@ -173,24 +165,6 @@ scroll-view {
   border-bottom-style: solid;
   border-bottom-width: 10rpx;
   border-bottom-color: #f4f5f9;
-}
-
-.latestComment {
-  float: left;
-  color: #38a9eb;
-  font-size: 80%;
-  margin-left: 40rpx;
-  margin-right: 20rpx;
-  margin-top: 40rpx;
-  margin-bottom: 20px;
-}
-
-.hottestComment {
-  color: #38a9eb;
-  font-size: 80%;
-  margin-left: 120rpx;
-  margin-top: 40rpx;
-  margin-bottom: 20px;
 }
 
 .nutitionList {
