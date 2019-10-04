@@ -5,6 +5,7 @@ App({
     this.getRecommend();
     this.login();
     this.getOrder();
+    this.getHealthData();
   },
 
   getMenu: function() {
@@ -12,6 +13,7 @@ App({
       url: 'http://62.234.183.121/getMenu',
       success: function (res) {
         console.log("success-menu");
+        console.log(res.data)
         var app = getApp();
         
         app.globalData.foodList = res.data;
@@ -69,12 +71,35 @@ App({
 
   getOrder: function() {
     wx.request({
+      method: 'POST',
+      data: {
+        'userid': this.globalData.openid,
+      },
       url: 'http://62.234.183.121/getOrder',
       success: function (res) {
-        console.log("success-order");
         var app = getApp();
+        console.log("success-order");
         app.globalData.allOrderList = res.data;
         console.log(res.data)
+      },
+      fail: function () {
+        console.log("fail");
+      }
+    });
+  },
+
+  getHealthData: function () {
+    wx.request({
+      method: 'POST',
+      data: {
+        'userid': this.globalData.openid,
+      },
+      url: 'http://62.234.183.121/getHealthData',
+      success: function (res) {
+        var app = getApp();
+        console.log("healthyData: " + res.data);
+        app.globalData.healthData = res.data;
+        console.log(app.globalData.healthData)
       },
       fail: function () {
         console.log("fail");
@@ -87,6 +112,7 @@ App({
     url: 'http://62.234.183.121/',
     shops:[],
     allOrderList:[],
+    healthData:[],
     orderlist:[],
     foodList: [],
     foodClass: [

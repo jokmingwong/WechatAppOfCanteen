@@ -12,7 +12,7 @@
 
       <view id="list" wx:for="{{orderlist}}" wx:key="id">
         <view class="viewstate">
-          <text class="textstate textin" style='font-size: 80%;'>订单状态：{{item.state}}</text>
+          <text class="textstate textin" style='font-size: 80%;'>订单状态：{{item.state == 1 ? '未完成':(item.state == 2 ? '未评论':'已完成')}}</text>
         </view>
         <view style="margin:20rpx;margin-color:#ebebeb;">
           <view class="ordermod">

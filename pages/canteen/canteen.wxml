@@ -12,12 +12,12 @@
 
       <view id="list" wx:for="{{orderlist}}" wx:key="id">
         <view class="viewstate">
-           <text class="textstate textin" style='font-size: 80%;'>订单状态：{{item.state}}</text>
+           <text class="textstate textin" style='font-size: 80%;'>订单状态：{{item.state == 1 ? '未完成':'已完成'}}</text>
         </view>
         <view style="margin:20rpx;margin-color:#ebebeb;">
           <view class="ordermod">
             <view class='orderItemImg'>
-              <image style="width:200rpx; height: 200rpx;" mode="scaleToFill" src="{{foodList[item.recipeid].pic}}"></image>
+              <image wx:if='{{foodList[item.recipeid].pic}}' style="width:200rpx; height: 200rpx;" mode="scaleToFill" src="{{foodList[item.recipeid].pic}}"></image>
             </view>
             <view class='orderItemDetail'>
               <text class="textstate" style='font-size:80%;margin-bottom:20rpx;color:#040008'>{{item.recipename}}</text>

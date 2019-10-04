@@ -12,16 +12,26 @@ Page({
   },
 
   onLoad: function(e) {
-    this.setData({
-      foodList: app.globalData.foodList,
-    });
+    app.getOrder();
+    var that = this
+    setTimeout(()=>{
+      console.log(app.globalData.foodList)
+      that.setData({
+        foodList: app.globalData.foodList,
+      })
+    },300)
+
   },
 
   onShow: function(e) {
-    this.setData({
-      allOrderList: app.globalData.allOrderList
-    });
-    this.setStatus(3);
+    app.getOrder();
+    var that = this
+    setTimeout(() => {
+      that.setData({
+        allOrderList: app.globalData.allOrderList
+      })
+      that.setStatus(3);
+    }, 300)
   },
 
   setStatus: function(status) {

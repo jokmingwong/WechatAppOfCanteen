@@ -88,6 +88,18 @@ Page({
     //console.log(e)
   },
 
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    var that = this;
+    app.getOrder();
+
+    setTimeout(() => {
+      that.onShow();
+      wx.hideNavigationBarLoading();
+      wx.stopPullDownRefresh();
+    }, 500);
+  },
+
   confirm: function (e) {
     const orderId = e.currentTarget.dataset.orderid;
     var that = this;
